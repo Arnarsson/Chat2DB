@@ -1,7 +1,7 @@
 FROM maven:3.8-openjdk-17 AS build
 WORKDIR /app
 COPY . .
-RUN mvn clean package -DskipTests
+RUN mvn clean package -DskipTests -f chat2db-server/pom.xml
 
 FROM openjdk:17-jdk-slim
 WORKDIR /app
