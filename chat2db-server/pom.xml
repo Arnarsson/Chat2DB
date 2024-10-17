@@ -14,6 +14,14 @@
     <version>${revision}</version>
     <name>chat2db-server-parent</name>
 
+    <repositories>
+        <repository>
+            <id>central-mirror</id>
+            <name>Central Mirror</name>
+            <url>https://repo1.maven.org/maven2/</url>
+        </repository>
+    </repositories>
+
     <properties>
         <revision>2.0.0-SNAPSHOT</revision>
         <maven.compiler.target>17</maven.compiler.target>
