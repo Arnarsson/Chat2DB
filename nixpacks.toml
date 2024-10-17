@@ -2,8 +2,7 @@
 aptPkgs = ["openjdk-17-jdk"]
 
 [phases.build]
-cmds = ["./mvnw clean package -DskipTests"]
-cmds = ["chmod +x build.sh", "./build.sh"]
+cmds = ["chmod +x build.sh", "./build.sh", "./mvnw clean package -DskipTests"]
 
 [start]
 cmd = "java -jar target/chat2db-server-1.0.0.jar"
