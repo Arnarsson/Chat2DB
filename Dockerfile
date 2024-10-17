@@ -10,6 +10,5 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 COPY --from=build /app/chat2db-server/target/*.jar ./
 EXPOSE 8080
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD curl --fail http://localhost:8080/actuator/health || exit 1
+HEALTHCHECK CMD curl --fail http://localhost:8080/actuator/health || exit 1
 CMD ["java", "-jar", "chat2db-server-web-start.jar"]
