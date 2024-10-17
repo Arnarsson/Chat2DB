@@ -1,9 +1,9 @@
 FROM maven:3.8-openjdk-17 AS build
-WORKDIR /app
-COPY . .
+WORKDIR /app/chat2db-server
+COPY ./chat2db-server .
 RUN mkdir -p ~/.m2
 COPY settings.xml ~/.m2/
-RUN mvn clean package -DskipTests -f chat2db-server/pom.xml
+RUN mvn clean package -DskipTests
 
 FROM openjdk:17-jdk-slim
 WORKDIR /app
